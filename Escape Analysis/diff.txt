@@ -1,0 +1,52 @@
+26d25
+< import soot.jimple.internal.JInterfaceInvokeExpr;            # for ArrayList Methods 
+240,252c239                                                     # for Inheritance 
+< 					// get fields of parent class if any Inheritance
+< 					SootClass parent = sootClass.getSuperclass();
+< 					if (parent != null) {
+< 							Chain<SootField> parentFields = parent.getFields();
+< 							for (SootField field : parentFields) {
+< 								if(!field.isStatic()) {
+< 									String ObjField = obj+"."+field.getName();
+< 									Set<String> values =new HashSet<>();
+< 									out.heap.put(ObjField, values);
+< 								} 
+< 							}
+< 					}
+< 
+---
+> 				
+254c241                                                 # for a.foo(b,c)
+< 				for (SootField field : fields) {
+---
+> 				for (SootField field : fields) {	
+451,465d437
+< 				// check if rightstmt is a.foo(b,c)
+< 				// get a from invokeExpr 
+< 				Value base = invokeExpr.getBase(); 
+< 				// Escape base 
+< 				if (inUnits.stack.containsKey(base.toString())) {
+< 					escapeObjs.addAll(inUnits.stack.get(base.toString()));
+< 				}
+< 
+< 				// make left stmt escape
+< 				Set<String> ref = new HashSet<>();
+< 				ref.add("Oglob");
+< 				// if leftStmt is Local then add to stack else
+< 				if (leftStmt instanceof Local) {
+< 					out.stack.put(leftStmt.toString(), ref);
+< 				} 
+616c588
+< 
+---
+> 				
+625,633d596                                                                     # for ArrayList Methods
+< 						escapeObjs.addAll(inUnits.stack.get(base.toString()));
+< 					}
+< 
+< 				}
+< 				// for arraylist methods
+< 				if (expr instanceof JInterfaceInvokeExpr) {
+< 					JInterfaceInvokeExpr virtualInvokeExpr = (JInterfaceInvokeExpr) expr;
+< 					base = virtualInvokeExpr.getBase();
+< 					if (inUnits.stack.containsKey(base.toString())) {

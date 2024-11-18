@@ -1,0 +1,53 @@
+Test Cases Not passed 
+11, 14, 16, 17, 18, 19, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+Correct - 10, 12 , 13, 15, 20, 
+
+1 - Test:main 10:12 8:11 9:12 
+My - Test:main 10:12 8:12 9:12 
+
+
+-- some change done lets see. 
+Test:main 10:12 8:11 9:12  
+
+2 - Test:main 10:15 12:15 14:15 16:16
+My - Modiff - Test:main 10:10 12:12 16:16 
+
+3 - Test:main 12:19 13:19 15:19 17:19 21:22 9:22
+My - Modiff - Test:main 12:12 13:19 15:15 17:17 21:22 9:22
+My - Orig - Test:main 12:22 13:22 15:15 17:22 21:22 9:22 
+
+4 - Test:bar
+Test:foo
+Test:main 10:13 11:12 17:13 18:13 19:12 24:13 25:13 9:13 
+My - wrong 
+
+5 - Test:foo
+Test:main 10:12 11:12 13:13 17:12 18:12 19:13 9:12
+My - Wrong 
+
+6 - Wrong 
+
+11 - No minor 1 obj wrong
+
+11, 14, 16, 17, 18, 19, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+7 - Error  
+8 - Error 
+9 - correct ? 
+10 - change - wrong 
+11 - wrong 
+12 - already correct 
+13 - change - correct 
+14 - change - wrong 
+15 - already correct 
+16 - Error 
+17 - Wrong 
+18 - Wrong
+19 - Wrong 
+20 - change is making it wrong 
+
+Correct - 10, 12 , 13, 15, 20, 
+- some correct some going boing boing 
+
+
